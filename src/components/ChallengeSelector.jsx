@@ -12,6 +12,7 @@ import paypal from "../assets/logos_paypal.png";
 import centeEllips from "../assets/Ellipse 1427.png";
 import sidellips from "../assets/sideEllipes.png";
 
+
 import {
   step2Prices,
   instantFundedPrices,
@@ -45,67 +46,96 @@ useEffect(() => {
     <div className="min-h-screen bg-black sm:pb-[72px] overflow-hidden relative">
       
       {/* HEADER */}
-      <div
-        className="header relative w-full mx-auto mb-16 px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 text-center"
-        style={{
-          backgroundImage: `url(${centeEllips})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-4 sm:mb-6 leading-snug sm:leading-tight lg:leading-tight">
-            Choose your challenge
-          </h1>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-xl mx-auto leading-relaxed sm:leading-relaxed lg:leading-relaxed">
-            Select your account size and begin a refined, professional trading experience.
-          </p>
-        </div>
-      </div>
+      {/* HEADER */}
+<div
+  className="header relative w-full max-w-[1200px] mx-auto mb-16 px-4 sm:px-6 lg:px-8 
+             py-16 sm:py-20 lg:py-28 text-center bg-no-repeat bg-center bg-cover"
+  style={{
+    backgroundImage: `url(${centeEllips})`,
+  }}
+>
+  <div className="absolute inset-0 bg-black/60"></div>
+
+  <div className="relative z-10 flex flex-col items-center justify-center">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white 
+                   mb-4 sm:mb-6 leading-snug sm:leading-tight lg:leading-tight">
+      Choose your challenge
+    </h1>
+
+    <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl 
+                  max-w-[900px] mx-auto leading-relaxed sm:leading-relaxed lg:leading-relaxed">
+      Select your account size and begin a refined, professional trading experience.
+    </p>
+  </div>
+</div>
+
+
 
       {/* STEP + ACCOUNT */}
       <div className="flex flex-col md:flex-row justify-around gap-12 mb-12 max-w-7xl mx-auto px-4">
         <div className="flex flex-col gap-6 w-full max-w-md mx-auto">
-          <div className="flex bg-[#0A0A0A] border sm:ml-4 border-[#1A1A1A] rounded-xl p-1 gap-2 w-full max-w-xs mx-auto justify-center">
-            <button
-              onClick={() => setStep("1-step")}
-              className={`flex-1 py-3 rounded-lg font-medium text-sm sm:text-base transition ${
-                step === "1-step" ? "bg-white text-black" : "bg-[#0D0C0C] text-gray-400"
-              }`}
-            >
-              2 - Step
-            </button>
-            <button
-              onClick={() => setStep("2-step")}
-              className={`flex-1 py-3 rounded-lg font-medium text-sm sm:text-base transition ${
-                step === "2-step" ? "bg-white text-black" : "bg-[#0D0C0C] text-gray-400"
-              }`}
-            >
-              Instant Funded
-            </button>
-          </div>
+<div className="flex bg-[#0A0A0A] border sm:ml-4 border-[#1A1A1A] rounded-xl p-1 gap-2 w-full max-w-xs mx-auto justify-center">
+  <button
+    onClick={() => setStep("1-step")}
+    style={{
+      background: step === "1-step"
+        ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // selected
+        : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)",   // default
+    }}
+    className={`flex-1 py-3 rounded-lg font-medium text-sm sm:text-base transition ${
+      step === "1-step" ? "text-black" : "text-white"
+    }`}
+  >
+    2 - Step
+  </button>
+
+  <button
+    onClick={() => setStep("2-step")}
+    style={{
+      background: step === "2-step"
+        ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // selected
+        : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)",   // default
+    }}
+    className={`flex-1 py-3 rounded-lg font-medium text-sm sm:text-base transition ${
+      step === "2-step" ? "text-black" : "text-white"
+    }`}
+  >
+    Instant Funded
+  </button>
+</div>
+
+
 
          
 {/* ACCOUNT BUTTONS */}
-<div className="grid grid-cols-4 sm:grid-cols-6 sm:w-[646px] gap-3 border border-[#1A1A1A] bg-[#0A0A0A] rounded-xl p-4">
-  {(step === "1-step" ? accounts : ["$2k", "$5k"]).map((acc) => (
-    <button
-      key={acc}
-      onClick={() => setAccount(acc)}
-      style={{
-        background: account === acc 
-          ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // selected
-          : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)", // default
-      }}
-      className={`py-2 font-medium transition rounded-md border border-[#1A1A1A] ${
-        step === "2-step" ? "sm:col-span-3 text-lg" : "sm:col-auto"
-      } ${account === acc ? "text-black" : "text-white"}`}
-    >
-      {acc}
-    </button>
-  ))}
+<div
+  className={`grid 
+    ${step === "2-step" ? "grid-cols-2" : "grid-cols-4 sm:grid-cols-6"} 
+    sm:w-[646px] gap-3 border border-[#1A1A1A] bg-[#0A0A0A] rounded-xl p-4`}
+>
+  {(step === "1-step" ? accounts : ["$2k", "$5k"]).map((acc) => {
+    const isSelected = account === acc;
+
+    return (
+      <button
+        key={acc}
+        onClick={() => setAccount(acc)}
+        style={{
+          background: isSelected
+            ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // highlight
+            : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)", // default
+        }}
+        className={`py-2 rounded-md font-medium transition border border-[#1A1A1A]
+          ${step === "2-step" ? "text-lg" : ""}
+          ${isSelected ? "text-black" : "text-white"}
+        `}
+      >
+        {acc}
+      </button>
+    );
+  })}
 </div>
+
 
 
 
