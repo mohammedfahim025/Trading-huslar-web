@@ -28,11 +28,14 @@ export default function ChallengeSelector() {
   const [account, setAccount] = useState("$20k");
   const accounts = Object.keys(step2Prices);
 
-  // step change হলে default account reset
-  useEffect(() => {
-    setAccount("$20k");
-  }, [step]);
+  // step change default account reset
+// step change default account reset
+useEffect(() => {
+  setAccount(step === "1-step" ? "$20k" : "$2k");
+}, [step]);
 
+
+  // display price update  step
   const displayedPrice =
     step === "1-step" ? step2Prices[account] : instantFundedPrices[account];
 
@@ -83,25 +86,33 @@ export default function ChallengeSelector() {
             </button>
           </div>
 
-          {/* ACCOUNT BUTTONS */}
-          <div className="grid grid-cols-4 sm:grid-cols-6 sm:w-[646px] gap-3 border border-[#1A1A1A] bg-[#0A0A0A] rounded-xl p-4">
-            {accounts.map((acc) => (
-              <button
-                key={acc}
-                onClick={() => setAccount(acc)}
-                className={`py-2 rounded-md text-base font-medium transition border ${
-                  account === acc
-                    ? "bg-white text-black"
-                    : "bg-[#0D0C0C] text-gray-400 border-[#000000]"
-                }`}
-              >
-                {acc}
-              </button>
-            ))}
-          </div>
+         
+{/* ACCOUNT BUTTONS */}
+<div className="grid grid-cols-4 sm:grid-cols-6 sm:w-[646px] gap-3 border border-[#1A1A1A] bg-[#0A0A0A] rounded-xl p-4">
+  {(step === "1-step" ? accounts : ["$2k", "$5k"]).map((acc) => (
+    <button
+      key={acc}
+      onClick={() => setAccount(acc)}
+      style={{
+        background: account === acc 
+          ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // selected
+          : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)", // default
+      }}
+      className={`py-2 font-medium transition rounded-md border border-[#1A1A1A] ${
+        step === "2-step" ? "sm:col-span-3 text-lg" : "sm:col-auto"
+      } ${account === acc ? "text-black" : "text-white"}`}
+    >
+      {acc}
+    </button>
+  ))}
+</div>
+
+
+
+
         </div>
 
-        {/* CHALLENGE PRICE */}
+        {/* CHALLENGE PRICE */} 
         <div className="bg-[#0C0C0C] rounded-[22px] p-6 border border-[#353535] h-auto w-full max-w-sm mx-auto">
           <div className="flex justify-center gap-2 mb-6">
             <span className="text-white text-2xl ">Price</span>
@@ -114,13 +125,16 @@ export default function ChallengeSelector() {
       </div>
 
       {/* PHASE CARDS */}
-      <div className="max-w-6xl mx-auto mb-6 px-4">
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-6 px-4">
         {displayedPhases.map((phase, idx) => (
           <div
             key={idx}
-            className={`group relative bg-slate-900/30 border border-[#1A1A1A] rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300
-              ${step === "2-step" ? "w-full md:w-6xl h-[528px] mx-auto" : "grid md:grid-cols-3 gap-6"}
-            `}
+            className="group relative bg-slate-900/30 border border-[#1A1A1A] rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
+            style={
+              step === "2-step"
+                ? { width: "max-w-6xl",  gridColumn: "span 3" }
+                : {}
+            }
           >
             <div className="relative z-20 flex justify-center items-center">
               <img

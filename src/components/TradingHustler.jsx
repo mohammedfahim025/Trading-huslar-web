@@ -18,18 +18,20 @@ export default function TradingHustler() {
     >
          {/* NAVBAR CENTER GLOW IMAGE */}
     
-  {/* GLOW ABOVE STEP BUTTON */}
+  {/* GLOW ABOVE CENTER */}
   <img
     src={navGlow}
     className="
       absolute 
-      top-[-100px]         
-      lef t-1/2 
+      top-0
+      left-1/2
       -translate-x-1/2
-      w-[700px]           
-      opacity-70 
+      w-[600px]
+      md:w-[800px]
+      opacity-60 
       pointer-events-none 
       select-none
+      blur-sm
     "
     alt="glow"
   />
