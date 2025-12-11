@@ -9,7 +9,7 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="font-inter-display">
+    <div className="font-inter-display overflow-x-hidden">
     <RouterProvider router={router} />
 
 
