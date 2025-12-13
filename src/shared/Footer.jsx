@@ -8,66 +8,75 @@ export default function Footer() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Main Content */}
-      <div className="flex-1 px-8 py-16">
+      <div className="flex-1  px-8 py-16">
         {/* Header */}
-        <div className="flex justify-between  mb-16 max-w-6xl mx-auto flex-col md:flex-row gap-6">
+        <div className="w-full flex items-center justify-between mb-16 max-w-6xl mx-auto gap-6 flex-row">
           <div className="">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" className="w-[85px] md:w-auto" />
           </div>
 
          {/* Social Icons */}
-<div className="flex gap-4">
+          <div className="flex gap-1 md:gap-4  ml-auto">
   {/* Facebook */}
-  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
-    <FaFacebookF className="text-white text-[18px] hover:text-[#00B67A]" />
+  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
+    <FaFacebookF className="text-white text-[30px] md:text-[18px] hover:text-[#00B67A]" />
   </div>
 
   {/* Mail */}
-  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
-    <MdEmail className="text-white text-[18px] hover:text-[#00B67A]" />
+  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
+    <MdEmail className="text-white text-[30px] md:text-[18px] hover:text-[#00B67A]" />
   </div>
 
   {/* Twitter */}
-  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
-    <FaTwitter className="text-white text-[18px] hover:text-[#00B67A]" />
+  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
+    <FaTwitter className="text-white text-[30px] md:text-[18px] hover:text-[#00B67A]" />
   </div>
 
   {/* LinkedIn */}
-  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
-    <FaLinkedinIn className="text-white text-[18px] hover:text-[#00B67A]" />
+  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
+    <FaLinkedinIn className="text-white text-[30px] md:text-[18px] hover:text-[#00B67A]" />
   </div>
 
   {/* Instagram */}
-  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
-    <FaInstagram className="text-white text-[18px] hover:text-[#00B67A]" />
+  <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-[linear-gradient(90deg,#0D0C0C,#171513)] cursor-pointer transition hover:scale-105">
+    <FaInstagram className="text-white text-[30px] md:text-[18px] hover:text-[#00B67A]" />
   </div>
 </div>
         </div>
 
         {/* Navigation Grid */}
-        <div className="flex flex-col md:flex-row justify-between max-w-7xl p-2 pb-8 pt-8 border-y border-[#1A1A1A] mx-auto   gap-12">
-          {/* Left Group: Trade, Resources, Community */}
-          <div className="flex flex-col md:flex-row gap-12">
-            {/* Trade Column */}
-            <div>
-              <h3 className="text-white font-bold mb-4">Trade</h3>
-              <ul className="space-y-3 text-sm text-[#B0B0B0] ">
-                <li><a href="#" className="hover:text-emerald-500  transition">Affiliate Program</a></li>
-                <li><a href="#" className="hover:text-emerald-500 transition">Economic Calendar</a></li>
-                <li><a href="#" className="hover:text-emerald-500 transition">Symbols</a></li>
-                <li><a href="#" className="hover:text-emerald-500 transition">Direct Pass</a></li>
-              </ul>
-            </div>
+        <div className="flex flex-row flex-wrap md:flex-row justify-between max-w-7xl p-4 md:p-2 pb-8 pt-8 border-y border-[#1A1A1A] mx-auto gap-12 bg-black md:bg-transparent">
+          {/* Left Group: Trade+Resources grouped, Community separate */}
+          <div className="flex flex-col md:flex-row gap-12 items-start">
+            <div className="flex flex-col sm:flex-row gap-8">
+              {/* Trade Column */}
+              {/* Trade + Resources Parent */}
+<div className="flex flex-row justify-between w-full 
+                sm:flex-row sm:justify-start sm:gap-8">
 
-            {/* Resources Column */}
-            <div>
-              <h3 className="text-white font-bold mb-4">Resources</h3>
-              <ul className="space-y-3 text-sm text-[#B0B0B0] ">
-                <li><a href="#" className="hover:text-emerald-500  transition">About us</a></li>
-                <li><a href="#" className="hover:text-emerald-500 transition">Support center</a></li>
-                <li><a href="#" className="hover:text-emerald-500 transition">Our history</a></li>
-                <li><a href="#" className="hover:text-emerald-500 transition">Blog</a></li>
-              </ul>
+  {/* Trade Column */}
+  <div>
+    <h3 className="text-white font-bold mb-4">Trade</h3>
+    <ul className="space-y-3 text-sm text-[#B0B0B0]">
+      <li><a href="#" className="hover:text-emerald-500 transition">Affiliate Program</a></li>
+      <li><a href="#" className="hover:text-emerald-500 transition">Economic Calendar</a></li>
+      <li><a href="#" className="hover:text-emerald-500 transition">Symbols</a></li>
+      <li><a href="#" className="hover:text-emerald-500 transition">Direct Pass</a></li>
+    </ul>
+  </div>
+
+  {/* Resources Column */}
+  <div>
+    <h3 className="text-white font-bold mb-4">Resources</h3>
+    <ul className="space-y-3 text-sm text-[#B0B0B0]">
+      <li><a href="#" className="hover:text-emerald-500 transition">About us</a></li>
+      <li><a href="#" className="hover:text-emerald-500 transition">Support center</a></li>
+      <li><a href="#" className="hover:text-emerald-500 transition">Our history</a></li>
+      <li><a href="#" className="hover:text-emerald-500 transition">Blog</a></li>
+    </ul>
+  </div>
+
+</div>
             </div>
 
             {/* Community Column */}

@@ -38,7 +38,7 @@ export default function TradingHustler() {
       
       {/* Header Section */}
       <div className="relative z-10 mt-[72px] text-center px-4 md:px-0">
-        <button className="inline-block rounded-[28px] border border-[#537066] text-white px-4 py-2 mb-4">
+        <button className="inline-block cursor-pointer rounded-[28px] border border-[#537066] text-white px-4 py-2 mb-4">
           Step by Step
         </button>
 

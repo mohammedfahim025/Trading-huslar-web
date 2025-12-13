@@ -26,14 +26,9 @@ export default function ChallengeSelector() {
   const headers = [header1, header2, header3];
 
   const [step, setStep] = useState("1-step");
-  const [account, setAccount] = useState("$20k");
+  const [account, setAccount] = useState("$200k");
   const accounts = Object.keys(step2Prices);
 
-  // step change default account reset
-// step change default account reset
-useEffect(() => {
-  setAccount(step === "1-step" ? "$20k" : "$2k");
-}, [step]);
 
 
   // display price update  step
@@ -46,23 +41,22 @@ useEffect(() => {
     <div className="min-h-screen bg-black sm:pb-[72px] overflow-hidden relative">
       
       {/* HEADER */}
-      {/* HEADER */}
 <div
   className="header relative w-full max-w-[1200px] mx-auto mb-16 px-4 sm:px-6 lg:px-8 
-             py-16 sm:py-20 lg:py-28 text-center bg-no-repeat bg-center bg-cover"
+             py-16  sm:py-20  text-center bg-no-repeat bg-center bg-cover"
   style={{
     backgroundImage: `url(${centeEllips})`,
   }}
 >
-  <div className="absolute inset-0 bg-black/60"></div>
+  <div className="absolute inset-0"></div>
 
-  <div className="relative z-10 flex flex-col items-center justify-center">
+  <div className="relative lg:pb-8 lg:pt-[72px]  pt-15    z-10 flex flex-col items-center justify-center">
     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white 
-                   mb-4 sm:mb-6 leading-snug sm:leading-tight lg:leading-tight">
+                    sm:mb-6 leading-snug sm:leading-tight lg:leading-tight">
       Choose your challenge
     </h1>
 
-    <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl 
+    <p className="text-gray-300 text-sm  sm:text-base md:text-lg lg:text-xl 
                   max-w-[900px] mx-auto leading-relaxed sm:leading-relaxed lg:leading-relaxed">
       Select your account size and begin a refined, professional trading experience.
     </p>
@@ -74,7 +68,7 @@ useEffect(() => {
       {/* STEP + ACCOUNT */}
       <div className="flex flex-col md:flex-row justify-around gap-12 mb-12 max-w-7xl mx-auto px-4">
         <div className="flex flex-col gap-6 w-full max-w-md mx-auto">
-<div className="flex bg-[#0A0A0A] border sm:ml-4 border-[#1A1A1A] rounded-xl p-1 gap-2 w-full max-w-xs mx-auto justify-center">
+<div className="flex bg-[#0A0A0A] border sm:ml-4 border-[#1A1A1A] rounded-xl p-1 gap-2  w-full max-w-xs mx-auto justify-center">
   <button
     onClick={() => setStep("1-step")}
     style={{
@@ -82,7 +76,7 @@ useEffect(() => {
         ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // selected
         : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)",   // default
     }}
-    className={`flex-1 py-3 rounded-lg font-medium text-sm sm:text-base transition ${
+    className={`flex-1 py-3 cursor-pointer rounded-lg font-medium text-sm sm:text-base transition ${
       step === "1-step" ? "text-black" : "text-white"
     }`}
   >
@@ -96,7 +90,7 @@ useEffect(() => {
         ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // selected
         : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)",   // default
     }}
-    className={`flex-1 py-3 rounded-lg font-medium text-sm sm:text-base transition ${
+    className={`flex-1 py-3 cursor-pointer rounded-lg font-medium text-sm sm:text-base transition ${
       step === "2-step" ? "text-black" : "text-white"
     }`}
   >
@@ -111,9 +105,9 @@ useEffect(() => {
 <div
   className={`grid 
     ${step === "2-step" ? "grid-cols-2" : "grid-cols-4 sm:grid-cols-6"} 
-    sm:w-[646px] gap-3 border border-[#1A1A1A] bg-[#0A0A0A] rounded-xl p-4`}
+    sm:w-[646px] gap-3  border border-[#1A1A1A] bg-[#0A0A0A] rounded-xl p-4`}
 >
-  {(step === "1-step" ? accounts : ["$2k", "$5k"]).map((acc) => {
+  {(step === "1-step" ? accounts : ["$200k", "$500k"]).map((acc) => {
     const isSelected = account === acc;
 
     return (
@@ -125,7 +119,7 @@ useEffect(() => {
             ? "linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 100%)" // highlight
             : "linear-gradient(180deg, #0D0C0C 0%, #131716 100%)", // default
         }}
-        className={`py-2 rounded-md font-medium transition border border-[#1A1A1A]
+        className={`py-2 rounded-md cursor-pointer font-medium transition border border-[#1A1A1A]
           ${step === "2-step" ? "text-lg" : ""}
           ${isSelected ? "text-black" : "text-white"}
         `}
@@ -143,12 +137,12 @@ useEffect(() => {
         </div>
 
         {/* CHALLENGE PRICE */} 
-        <div className="bg-[#0C0C0C] rounded-[22px] p-6 border border-[#353535] h-auto w-full max-w-sm mx-auto">
-          <div className="flex justify-center gap-2 mb-6">
+        <div className="bg-[#0C0C0C]  rounded-[22px] p-6 border border-[#353535] h-auto w-full max-w-sm mx-auto">
+          <div className="flex justify-center gap-2 mb-6  ">
             <span className="text-white text-2xl ">Price</span>
             <span className="text-white text-2xl font-semibold"> ${displayedPrice}</span>
           </div>
-          <button className="text-base px-7 mt-4 bg-white text-black font-medium py-4 rounded-lg flex items-center justify-center gap-2 mx-auto">
+          <button className="text-base px-7 mt-4 cursor-pointer bg-white text-black font-medium py-4 rounded-lg flex items-center justify-center gap-2 mx-auto">
             Start Challenge <ChevronRight size={20} />
           </button>
         </div>
@@ -172,11 +166,11 @@ useEffect(() => {
                 alt=""
                 className="w-full h-[180px] object-cover rounded-lg"
               />
-              <div className="absolute inset-0 flex flex-col justify-start items-start bg-black/40 rounded-lg p-6">
-                <button className="px-4 py-2 border border-[#145D45] text-white rounded-md text-lg font-semibold">
+              <div className="absolute inset-0 flex flex-col justify-start items-start  rounded-lg p-6">
+                <button className="px-4 cursor-pointer py-2 border border-[#145D45] text-white rounded-md text-lg font-semibold">
                   {phase.name}
                 </button>
-                <p className="text-gray-300 mt-3 text-sm">{phase.desc}</p>
+                <p className="text-gray-300 mt-3 pb-[32px] text-sm">{phase.desc}</p>
               </div>
             </div>
             <div className="space-y-4 bg-[#0C0C0C] p-6 pb-12 text-sm sm:text-base">
@@ -186,7 +180,6 @@ useEffect(() => {
                 ["Maximum loss", phase.maxLoss],
                 ["Profit target", phase.profitTarget],
                 ["Leverage", phase.leverage],
-                ["Reward Schedule", phase.reward],
                 ["Profit Split", phase.profitSplit],
               ].map(([label, value], i) => (
                 <div className="flex justify-between" key={i}>

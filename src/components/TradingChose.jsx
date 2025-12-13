@@ -12,7 +12,7 @@ import headerBg from "../assets/Ellipse 1427.png";
 
 export default function TradingChose() {
   return (
-    <div className="min-h-screen text-white bg-black p-[72px] sm:p-10 px-4">
+    <div className="min-h-screen text-white bg-black p-[72px]  sm:p-10 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
      <div

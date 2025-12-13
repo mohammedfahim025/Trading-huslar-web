@@ -27,11 +27,11 @@ const Navbar = () => {
 
       {/* Desktop Buttons */}
       <div className="hidden md:flex items-center gap-2">
-        <button className="px-8 py-3 rounded-xl bg-white text-black font-medium text-[16px]">
+        <button className="px-8 py-3 cursor-pointer rounded-xl bg-white text-black font-medium text-[16px]">
           Log In
         </button>
 
-        <button className="px-8 py-3 rounded-xl border bg-[#101010] border-[#69D0A5] text-white font-normal">
+        <button className="px-8 py-3 cursor-pointer rounded-xl border bg-[#101010] border-[#69D0A5] text-white font-normal">
           Get Funded
         </button>
       </div>

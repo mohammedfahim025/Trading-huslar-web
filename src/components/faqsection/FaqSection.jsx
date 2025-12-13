@@ -50,11 +50,11 @@ export default function FaqSection() {
                 "linear-gradient(90deg, #0D0C0C 0%, #131716 50%, #0D0C0C 100%)",
             }}
             className=" text-[#4de3c9] px-8 py-3        
-             rounded-md text-[16px] mb-3  "
+             rounded-md text-[16px] mb-3 cursor-pointer "
           >
             FAQ’s
           </button>
-          <h1 className="text-2xl md:text-5xl mb-5 text-[#999999] font-medium text-center">
+          <h1 className="text-2xl md:text-5xl  mb-5 text-[#999999] font-medium text-center">
             Frequently Asked Questions
           </h1>
         </div>
@@ -71,7 +71,7 @@ export default function FaqSection() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="w-full flex items-center justify-between cursor-pointer text-left"
+                  className="w-full flex items-center cursor-pointer justify-between text-left"
                 >
                   <h2 className="text-lg lg:text-xl font-medium">{item.question}</h2>
 

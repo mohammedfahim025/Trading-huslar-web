@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import Navbar from "../shared/Navbar";
-import banner from "../assets/banner.jpg";
+import banner from "../assets/hero2.png";
 
 const Banner = () => {
   return (
@@ -12,13 +12,13 @@ const Banner = () => {
           backgroundPosition: "center",
           backgroundBlendMode: "normal",
         }}
-        className="min-h-screen w-full relative"
+        className=" w-full relative"
       >
         <Navbar />
 
         <section className="max-w-7xl mx-auto px-4  sm:px-6 sm:py-24 lg:px-8 lg:py-3 text-center">
           {/* REVIEW BADGE */}
-          <div className="mt-16 flex items-center justify-center gap-2 mx-auto w-fit px-6 py-3 rounded-full border border-[#28A97F] text-white">
+          <div className="mt-18  flex items-center justify-center gap-2 mx-auto w-fit px-6 py-3 rounded-full border border-[#28A97F] text-white">
             <div className="flex items-center gap-1">
               <Star size={20} className="text-[#FFA300] fill-[#FFA300]" />
               <Star size={20} className="text-[#FFA300] fill-[#FFA300]" />
@@ -26,7 +26,7 @@ const Banner = () => {
               <Star size={20} className="text-[#FFA300] fill-[#FFA300]" />
               <Star size={20} className="text-[#FFA300] fill-[#FFA300]" />
             </div>
-            <span className="text-xs sm:text-[14px] md:text-[16px] font-medium">
+            <span className="text-xs sm:text-[14px] md:text-[16px] ">
               Rated 4.8/5 From 500+ Verified Reviews
             </span>
           </div>
@@ -45,14 +45,14 @@ const Banner = () => {
           {/* BUTTONS */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <a
-              className="inline-block rounded-xl bg-white text-black px-8 py-4 font-normal font-inter-display transition hover:bg-gray-200"
+              className="inline-block cursor-pointer rounded-xl bg-white text-black px-8 py-4 font-normal font-inter-display transition hover:bg-gray-200"
               href="#"
             >
               Start Challenge
             </a>
 
             <a
-              className="inline-block rounded-xl bg-black text-white px-8 py-4 font-normal border border-[#7E7E7E] font-inter-display transition hover:bg-gray-900"
+              className="inline-block cursor-pointer rounded-xl bg-black text-white px-8 py-4 font-normal border border-[#7E7E7E] font-inter-display transition hover:bg-gray-900"
               href="#"
             >
               Join Our Telegram
@@ -60,12 +60,12 @@ const Banner = () => {
           </div>
 
           {/* WORKS SECTION */}
-          <section className="py-10 mt-6  sm:mt-24 lg:mt-[132px]">
+          <section className="py-10   sm:mt-24 lg:mt-24">
             <div className="mx-auto">
-              <div className="grid grid-cols-2 pb-15 sm:grid-cols-2 px-8  md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-items-center text-center">
+              <div className="grid grid-cols-2 mb-[72px] pb-15 sm:grid-cols-2 px-8  md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-items-center text-center">
                 {/* Item 1 */}
                 <div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[40px] font-semibold text-[#002A1C]">
+                  <h2 className="text-3xl sm:text-4xl  md:text-5xl lg:text-[40px] font-semibold text-[#002A1C]">
                     2021
                   </h2>
                   <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[#000000] mt-2 sm:mt-4">

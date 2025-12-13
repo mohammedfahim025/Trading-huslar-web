@@ -47,11 +47,11 @@ const Community = () => {
 
         {/* ------- Buttons ------- */}
        <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center w-full">
-  <button className="w-full sm:w-auto bg-white text-base text-black px-8 py-3 rounded-xl hover:bg-[#008A57] hover:text-white transition font-medium shadow-md">
+  <button className="w-full sm:w-auto cursor-pointer bg-white text-base text-black px-8 py-3 rounded-xl hover:bg-[#008A57] hover:text-white transition font-medium shadow-md">
     Choose Your Challenge
   </button>
 
-  <button className="w-full sm:w-auto border text-base bg-black border-[#00B67A] text-white px-8 py-3 rounded-xl hover:bg-[#00B67A] hover:text-black transition font-medium shadow-md">
+  <button className="w-full sm:w-auto cursor-pointer border text-base bg-black border-[#00B67A] text-white px-8 py-3 rounded-xl hover:bg-[#00B67A] hover:text-black transition font-medium shadow-md">
     Learn More
   </button>
 </div>
